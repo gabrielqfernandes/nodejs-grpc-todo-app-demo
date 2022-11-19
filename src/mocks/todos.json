@@ -1,0 +1,18 @@
+[
+  {
+    "id": "407f013a-518a-4d1f-aeba-7bcbbb608d93",
+    "name": "Clean My Room",
+    "description": "mom's gonna be pissed at me if I don't",
+    "due_date": "2022-11-19:20T45:00-0300",
+    "done": false,
+    "created_at": "2022-11-19T13:54:00-0300"
+  },
+  {
+    "id": "c3a1e204-d859-4cc0-a839-88651ea40e49",
+    "name": "Do the Dishes",
+    "description": "I have to eat at some point, right?",
+    "due_date": "2022-11-19:20T45:00-0300",
+    "done": false,
+    "created_at": "2022-11-19T13:54:00-0300"
+  }
+]

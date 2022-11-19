@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package todo_proto;
+
+message ToDo {
+    string id = 0;
+    string title = 1;
+    string description = 2;
+    string due_date = 3;
+    bool done = 4;
+    string created_at = 5;
+}
+
+message ListToDosReply {
+    repeated ToDo tasks = 0 [packed=true];
+}
+
+message AddTodoRequest {
+    string title = 0;
+    optional string description = 1;
+    optional string due_date = 2;
+}
+
+message EmptyMessage {}
+
+service ToDoService {
+    rpc ListToDos(EmptyMessage) returns (ListToDosReply) {}
+} 
