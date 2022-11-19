@@ -4,12 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/todo-manager-server.js -w src/*",
+    "dev": "nodemon src/todo-manager-server.js -e json,js,proto",
     "start": "node src/todo-manager-server.js"
   },
   "dependencies": {
     "@grpc/grpc-js": "^1.7.3",
     "@grpc/proto-loader": "^0.7.3",
-    "nodemon": "^2.0.20"
+    "moment-timezone": "^0.5.39",
+    "nodemon": "^2.0.20",
+    "uuid": "^9.0.0"
   }
 }

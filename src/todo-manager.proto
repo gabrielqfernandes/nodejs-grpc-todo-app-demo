@@ -3,26 +3,27 @@ syntax = "proto3";
 package todo_proto;
 
 message ToDo {
-    string id = 0;
-    string title = 1;
-    string description = 2;
-    string due_date = 3;
-    bool done = 4;
-    string created_at = 5;
+    string id = 1;
+    string title = 2;
+    string description = 3;
+    string due_date = 4;
+    bool done = 5;
+    string created_at = 6;
 }
 
 message ListToDosReply {
-    repeated ToDo tasks = 0 [packed=true];
+    repeated ToDo tasks = 1 [packed=true];
 }
 
 message AddTodoRequest {
-    string title = 0;
-    optional string description = 1;
-    optional string due_date = 2;
+    string title = 1;
+    string description = 2;
+    string due_date = 3;
 }
 
 message EmptyMessage {}
 
 service ToDoService {
     rpc ListToDos(EmptyMessage) returns (ListToDosReply) {}
+    rpc AddToDo(AddTodoRequest) returns (ListToDosReply) {}
 } 

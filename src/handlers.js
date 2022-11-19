@@ -1,7 +1,23 @@
+const uuid = require('uuid');
+const moment = require('moment-timezone');
 const db = require('./mocks/todos.json');
 
 module.exports = {
   ListToDos(_call, callback) {
+    callback(null, {tasks: db});
+  },
+  AddToDo(call, callback) {
+    const {title, description, due_date} = call.request;
+
+    db.push({
+      id: uuid.v4(),
+      title,
+      description,
+      due_date,
+      done: false,
+      created_at: moment().tz('America/Sao_Paulo').format(),
+    });
+
     callback(null, {tasks: db});
   },
 };
