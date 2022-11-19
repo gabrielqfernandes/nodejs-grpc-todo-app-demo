@@ -20,4 +20,11 @@ module.exports = {
 
     callback(null, {tasks: db});
   },
+  MarkAsDone(call, callback) {
+    const task_idx = db.findIndex((task) => task.id == call.request.task_id);
+
+    if (task_idx > -1) db[task_idx].done = true;
+
+    callback(null, {task: db[task_idx]});
+  },
 };
